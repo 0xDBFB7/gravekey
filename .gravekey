@@ -1,0 +1,15 @@
+cd /home/arthurdent/Projects/PGM/PGM_ID_gap_calibration/
+
+pkill -f reload.sh
+        
+#./run_pipeline.sh
+
+
+#cd ~/Projects/PGM/PGM_major_K_stage_repeatability/
+#/home/arthurdent/Programs/miniconda/bin/python analyses/mapping/mapping_plotter_Sept_26.py
+
+#cd /home/arthurdent/Projects/hargrave_lite/
+
+#python main.py
+
+#echo "Script execution complete"

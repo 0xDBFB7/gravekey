@@ -1,10 +1,11 @@
 #!/bin/bash
 
 #echo -e "\e[3J" # clear scrollback
+stty sane
 clear
 
 
-#trap "exec $0" EXIT
+trap "exec $0" EXIT
 
 
 
@@ -13,14 +14,8 @@ clear
 # terminate with  pkill -9 -f reload.sh
 
 while true; do
-        echo "Running gravescript at $(date)"
-        running_processes="$(pgrep -f reload.sh)"
-        for i in $running_processes
-        do
-        	pkill -P $i
-        	echo "killed $i"
-        done
-        pkill -f gravekey_run.sh
-        ./gravekey_run.sh
-        sleep infinity
+	echo "Running gravescript at $(date)"
+	screen -X -S gravekey quit || true
+	screen -S gravekey sh -c "./gravekey_run.sh; sleep infinity"
+    sleep infinity
 done

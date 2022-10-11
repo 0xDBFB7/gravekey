@@ -4,7 +4,7 @@
 clear
 
 
-trap "exec $0" EXIT
+#trap "exec $0" EXIT
 
 
 
@@ -14,7 +14,13 @@ trap "exec $0" EXIT
 
 while true; do
         echo "Running gravescript at $(date)"
-        pkill -9 -f gravekey_run.sh
+        running_processes="$(pgrep -f reload.sh)"
+        for i in $running_processes
+        do
+        	pkill -P $i
+        	echo "killed $i"
+        done
+        pkill -f gravekey_run.sh
         ./gravekey_run.sh
         sleep infinity
 done

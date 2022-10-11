@@ -1,16 +1,5 @@
 
-# echo "cd ${PWD} && !!" > /tmp/scriptcmd
-
-#"pkill -SIGQUIT konsole || true && sleep 0.5 && konsole --noclose -e 'bash /home/arthurdent/.gravekey'" 
-#c:49
-
-#"pkill -SIGQUIT konsole || true"
-#Mod1+c:49
-
-
-"cd /home/arthurdent/Projects/PGM/PGM_ID_gap_calibration/ && pkill -f reload.sh"
+"pkill -f reload.sh"
 c:49
-
-
 
 
